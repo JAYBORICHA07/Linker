@@ -16,8 +16,9 @@ const ErrorPage = ({ code, message }: ErrorPageProps) => {
         </Text>
 
         <Text fontSize={{ base: 'sm', md: 'xl' }}>
-          need help? - dm me on twitter{' '}
-          <Link
+          need help? - contact : jayboricha540@gmail.com
+          {/* need help? - dm me on twitter{' '} */}
+          {/* <Link
             href="https://twitter.com/aleemrehmtulla"
             textDecor={'underline'}
             isExternal
@@ -25,7 +26,7 @@ const ErrorPage = ({ code, message }: ErrorPageProps) => {
             _hover={{ opacity: 0.8 }}
           >
             @aleemrehmtulla
-          </Link>
+          </Link> */}
         </Text>
       </VStack>
     </VStack>
