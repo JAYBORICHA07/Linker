@@ -85,7 +85,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
     const isValid = await validate(email)
     if (!isValid) {
       setEmailLoading(false)
-      toast({ title: 'Invalid email', status: 'error', duration: 300000 })
+      toast({ title: 'Invalid email', status: 'error', duration: 15000 })
       return
     }
 
