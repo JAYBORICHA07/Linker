@@ -27,7 +27,7 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
   console.log({file}, response.payload, response.payload.blobName);
 
   const upload = await fetch(uploadURL, { 
-    method: 'POST', 
+    method: 'PUT', 
     body: file,
     headers: {
       "Content-Type": file.type,
@@ -37,8 +37,8 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
 
   // const xhr = new XMLHttpRequest();
   // xhr.open('PUT, uploadUR)
-  console.log({upload});
   const uploadResponse = await upload.json()
+  console.log({uploadResponse});
   if (!uploadResponse.success) return { error: JSON.stringify(uploadResponse) }
 
   const imageURL = uploadResponse.result.variants[0]
