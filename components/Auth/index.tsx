@@ -85,7 +85,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
     const isValid = await validate(email)
     if (!isValid) {
       setEmailLoading(false)
-      toast({ title: 'Invalid email', status: 'error', duration: 3000 })
+      toast({ title: 'Invalid email', status: 'error', duration: 300000 })
       return
     }
 
@@ -179,7 +179,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
             <Text px={8}>or</Text>
             <Box bg="gray.300" w="full" h="1px" />
           </HStack>
-          
+
           <VStack spacing={3}>
             {PROVIDERS.map((item, i) => (
               <Button
