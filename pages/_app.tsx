@@ -1,6 +1,5 @@
 import 'styles/globals.css'
 import { createContext, ReactElement, ReactNode, useEffect, useState } from 'react'
-
 import { ChakraProvider } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'

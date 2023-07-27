@@ -4,6 +4,7 @@ export const HOSTS = [
   'staging.kytelink.com',
   'www.staging.kytelink.com',
   'localhost:3000',
+  'https://oklink.vercel.app'
 ]
 
 export const CUSTOM_DOMAINS = [

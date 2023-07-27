@@ -60,10 +60,12 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
   }
 
   const authSocial = async (provider: string) => {
+    console.log(provider + 'font-size : 40px');
     const BASE_URL = getBaseURL(window.location.hostname)
 
-    if (provider === 'google') setGoogleLoading(true)
+    // if (provider === 'google') setGoogleLoading(true)
     // if (provider === 'github') setGithubLoading(true)
+    setGoogleLoading(true)
 
     console.log('authing with', provider)
     console.log(BASE_URL)

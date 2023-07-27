@@ -35,7 +35,6 @@ const Home = () => {
           </VStack>
           <ExampleKytes />
         </HStack>
-
         <HorizontalScroll />
       </VStack>
     </>
