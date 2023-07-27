@@ -93,7 +93,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
 
     await signIn('email', {
       email,
-      callbackUrl: `${BASE_URL}/edit`,
+      callbackUrl: `${BASE_URL}/edit/design`,
     })
 
     setTimeout(() => {
