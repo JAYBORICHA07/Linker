@@ -23,7 +23,7 @@ type GetStartedModalProps = {
 }
 
 const ShareKyteModal = ({ modalOpen, setModalOpen, username }: GetStartedModalProps) => {
-  const urls = ['kyte.bio', 'kyte.lol', 'kytelink.com', 'yoyo.so']
+  const urls = ['oklink.vercel.app']
   const socials = [
     {
       icon: FaTwitter,
