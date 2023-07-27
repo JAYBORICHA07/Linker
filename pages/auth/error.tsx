@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 const Error = () => {
   const router = useRouter()
+  console.log(router.query)
   const message = router.query.error as string
   return <ErrorPage code={401} message={message} />
 }
