@@ -193,7 +193,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
                 _active={!googleLoading ? { opacity: 0.5 } : {}}
                 _focus={{ outline: 'none' }}
                 onClick={() => authSocial(item.name.toLowerCase())}
-                isLoading={item.name.toLowerCase() === 'google' ? googleLoading}
+                isLoading={googleLoading}
                 // isLoading={item.name.toLowerCase() === 'google' ? googleLoading : githubLoading}
               >
                 <Box as={item.icon} color="white" size="20px" />
