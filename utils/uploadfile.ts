@@ -23,7 +23,6 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
     formData.append(key, value as string);
   })
   formData.append('file', file);
-  // console.log({formData});
 
   const uploadResponse = await fetch(response.url, { 
     method: 'POST', 
@@ -32,11 +31,6 @@ export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFil
       'x-amz-acl': 'pulic-read',
     }
   })
-  // .then(async res => {
-  //   if (res.status === 200) return await res.json()
-  //   else throw res;
-  // })
-  // .catch(err => console.error(err));
 
   console.log({uploadResponse});
   if (uploadResponse.status !== 204) return { error: JSON.stringify(uploadResponse) }
