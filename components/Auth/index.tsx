@@ -69,7 +69,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
     // console.log('authing with', provider)
     // console.log("base url :-"+BASE_URL)
     await signIn(provider, {
-      callbackUrl: `${BASE_URL}`,
+      callbackUrl: `${BASE_URL}/edit`,
     })
 
     setTimeout(() => {
@@ -91,7 +91,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
 
     await signIn('email', {
       email,
-      callbackUrl: `${BASE_URL}`,
+      callbackUrl: `${BASE_URL}/edit`,
     })
 
     setTimeout(() => {
