@@ -2,8 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import {S3Client } from '@aws-sdk/client-s3';
 import { createPresignedPost } from '@aws-sdk/s3-presigned-post';
 
-
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
     try {
