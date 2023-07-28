@@ -66,10 +66,10 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
     if (provider === 'google') setGoogleLoading(true)
     // if (provider === 'github') setGithubLoading(true)
 
-    console.log('authing with', provider)
-    console.log(BASE_URL)
+    // console.log('authing with', provider)
+    // console.log("base url :-"+BASE_URL)
     await signIn(provider, {
-      callbackUrl: `${BASE_URL}/edit`,
+      callbackUrl: `${BASE_URL}`,
     })
 
     setTimeout(() => {
@@ -80,7 +80,6 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
 
   const authEmail = async () => {
     const BASE_URL = getBaseURL(window.location.hostname)
-
     setEmailLoading(true)
 
     const isValid = await validate(email)
@@ -92,7 +91,7 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
 
     await signIn('email', {
       email,
-      callbackUrl: `${BASE_URL}/edit`,
+      callbackUrl: `${BASE_URL}`,
     })
 
     setTimeout(() => {
