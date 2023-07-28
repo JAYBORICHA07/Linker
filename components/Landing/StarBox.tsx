@@ -40,9 +40,9 @@ const StarBox = () => {
           pr={3}
           pl={{ base: 2, md: 1 }}
         >
-          <Text display={{ base: 'block', md: 'none' }}>Star us on GitHub!</Text>
-          <Text display={{ base: 'none', md: 'block' }}>Check out the source code on GitHub</Text>
-          <FaGithub />
+          {/* <Text display={{ base: 'block', md: 'none' }}>Star us on GitHub!</Text> */}
+          <Text display={{ base: 'none', md: 'block' }}>Welcome to the Ok Link</Text>
+          {/* <FaGithub /> */}
         </HStack>
       </a>
     </Box>
