@@ -17,7 +17,8 @@ import { signIn } from 'next-auth/react'
 
 import { getBaseURL } from 'utils/utils'
 import { IoIosArrowBack } from 'react-icons/io'
-import { FaArrowRight, FaGithub, FaGoogle } from 'react-icons/fa'
+// import { FaArrowRight, FaGithub, FaGoogle } from 'react-icons/fa'
+import { FaArrowRight, FaGoogle } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 
@@ -188,10 +189,12 @@ const AuthComponent = ({ isSignup }: AuthComponentProps) => {
                 textColor="white"
                 w="full"
                 // _hover={!googleLoading && !githubLoading ? { opacity: 0.8 } : {}}
-                _active={!googleLoading && !githubLoading ? { opacity: 0.5 } : {}}
+                // _active={!googleLoading && !githubLoading ? { opacity: 0.5 } : {}}
+                _active={!googleLoading ? { opacity: 0.5 } : {}}
                 _focus={{ outline: 'none' }}
                 onClick={() => authSocial(item.name.toLowerCase())}
-                isLoading={item.name.toLowerCase() === 'google' ? googleLoading : githubLoading}
+                isLoading={item.name.toLowerCase() === 'google' ? googleLoading}
+                // isLoading={item.name.toLowerCase() === 'google' ? googleLoading : githubLoading}
               >
                 <Box as={item.icon} color="white" size="20px" />
                 <Text pl={2}> Continue with {item.name}</Text>
