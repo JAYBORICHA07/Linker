@@ -5,15 +5,40 @@ type UploadFileResponse = {
 }
 
 export async function uploadFile(file: File, isPfp?: boolean): Promise<UploadFileResponse> {
-  const getuploadurl = await fetch('/api/images/getuploadurl')
+  const getuploadurl = await fetch('/api/images/getuploadurl', {
+    method: 'POST',
+    body: JSON.stringify({ 
+      fileName: file.name,
+      fileType: file.type
+    })
+  });
   const response = await getuploadurl.json()
-  const uploadURL = response.uploadURL
+  const uploadURL = response.payload.uploadURL
 
-  const formData = new FormData()
-  formData.append('file', file)
+  // const formData = new FormData()
+  // formData.append('file', file)
 
-  const upload = await fetch(uploadURL, { method: 'POST', body: formData })
+  
+  // const newFile = {
+  //   ...file,
+  //   name: response.payload.blobName
+  // }
+  
+  // console.log({file}, response.payload, response.payload.blobName);
+
+  const upload = await fetch(uploadURL, { 
+    method: 'PUT', 
+    body: file,
+    headers: {
+      "Content-Type": file.type,
+      'x-amz-acl': 'pulic-read',
+    }
+  });
+
+  // const xhr = new XMLHttpRequest();
+  // xhr.open('PUT, uploadUR)
   const uploadResponse = await upload.json()
+  console.log({uploadResponse});
   if (!uploadResponse.success) return { error: JSON.stringify(uploadResponse) }
 
   const imageURL = uploadResponse.result.variants[0]
